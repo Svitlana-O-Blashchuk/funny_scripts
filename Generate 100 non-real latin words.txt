@@ -1,0 +1,36 @@
+import random
+
+# Sounds
+vowels = ['a', 'e', 'i', 'o', 'u']
+consonants = ['p', 't', 'k', 'b', 'd', 'g', 'm', 'n', 'l', 'r', 's', 'v', 'f']
+endings = ['us', 'um', 'a', 'is', 'or', 'io']
+
+# Words structures
+templates = [
+    'CVCV', 'CVCVC', 'CVCVCV',
+    'CVCCV', 'CVCVCVC', 'CVCCVC',
+]
+
+# Generate one word
+def generate_word():
+    template = random.choice(templates)  
+    word = []
+    for char in template:
+        if char == 'C':
+            word.append(random.choice(consonants))   
+        elif char == 'V':
+            word.append(random.choice(vowels))   
+    word = ''.join(word)
+    # Add ending to the generated word
+    if random.random() > 0.5:  
+        word += random.choice(endings)
+    return word
+
+# Generate a list of words
+def generate_words(count=100):
+    words = [generate_word() for _ in range(count)]
+    return words
+
+# Display the words
+generated_words = generate_words(100)
+print("Generated words:", generated_words)
