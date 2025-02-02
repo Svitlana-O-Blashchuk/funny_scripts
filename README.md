@@ -13,6 +13,3 @@ This script generates random, pseudo-Latin-sounding words using predefined conso
 ## 📊 Dependencies
 - `random` for generating random numbers and selecting random samples.
 
-## 🤝 Contributions
-Feel free to contribute by improving the analysis, adding visualization tools, or optimizing performance. Fork the repository, create a branch, and submit a pull request!
-
